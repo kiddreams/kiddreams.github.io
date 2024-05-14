@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<link href="../stylesheet.css" rel="stylesheet" type="text/css">
+	<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+	<style>
+		h1{
+			font-family: aAnotherTag;
+			color: red;	
+			text-align: center;
+		}
+		body{
+			background-image: url("background pic.jpeg");
+		}
+		button{
+			text-align: center;
+		}
+		p{
+			font-size: 70px;
+			color:white;
+			font-family: aAnotherTag;
+		}
+		#myDIV {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: darkblue;
+  margin-top: 20px;
+  display: none;
+}
+	
+	</style>
+	<script>
+		function nameFunction() {
+			let userName = document.querySelector("#userName");
+			let message = document.querySelector("#message");
+			
+			message.innerHTML = "Heyyyyy " + userName.value + " click the try it box below"; 
+		}
+	function wordFunction() {
+  var x = document.getElementById("myDIV");
+  if (window.getComputedStyle(x).display === "none") {
+    x.style.display = "block";
+  }
+}
+	
+	</script>
+</head>
+
+
+<body>
+	<h1 class= "animate__animated animate__bounce">
+		Song Curator!
+	</h1>
+	<h3 class= "animate__animated animate__bounce">Hello user please enter your name down below</h3>
+	<input id="userName">
+		<button onClick="nameFunction()" > SUBMIT</button>
+	<br> <br> <br>
+<h2 class= "animate__animated animate__fadeInLeft" id="message">  </h2>
+
+<div id="my-div">
+    <a href="before 2000s.html" class = "fill-div"></a>
+</div>
+<button onclick="wordFunction()">Try it</button>
+
+	<a href="anime tab.html"> <div id="myDIV">
+Move on to the next!
+	</div> </a>
+
+<p>This is the song curator, giving you music specifically songs and albums designed for your taste. Firstly you will click the box up above this text to take you to your first question. Enjoy!</p>
+
+
+	
+</body>
+</html>
