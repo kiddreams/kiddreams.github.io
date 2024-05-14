@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<link href="../stylesheet.css" rel="stylesheet" type="text/css">
+	<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+	<style>
+		
+		body{
+			background: url("_ (22).jpeg");
+		}
+		* {box-sizing: border-box;}
+		
+		h1{
+			font-family: aAnotherTag;
+			font-size: 600;
+		}
+		h2{
+			position: absolute;
+			top: 105px;
+			right: 108px;
+		}
+		p{
+			font-color: aliceblue;
+			font-size: 20px;
+		}
+.img-comp-container {
+  position: relative;
+  height: 600px;
+left: 200px;/*should be the same height as the images*/
+}
+
+.img-comp-img {
+  position: absolute;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+}
+
+.img-comp-img img {
+  display: inline;
+  vertical-align: middle;
+}
+
+.img-comp-slider {
+  position: absolute;
+  z-index: 9;
+  cursor: ew-resize;
+  /*set the appearance of the slider:*/
+  width: 40px;
+  height: 40px;
+  background-color: slateblue;
+  opacity: 0.7;
+  border-radius: 50%;
+}
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+
+	
+	</style>
+	<script>
+		
+		function initComparisons() {
+  var x, i;
+  /* Find all elements with an "overlay" class: */
+  x = document.getElementsByClassName("img-comp-overlay");
+  for (i = 0; i < x.length; i++) {
+    /* Once for each "overlay" element:
+    pass the "overlay" element as a parameter when executing the compareImages function: */
+    compareImages(x[i]);
+  }
+  function compareImages(img) {
+    var slider, img, clicked = 0, w, h;
+    /* Get the width and height of the img element */
+    w = img.offsetWidth;
+    h = img.offsetHeight;
+    /* Set the width of the img element to 50%: */
+    img.style.width = (w / 2) + "px";
+    /* Create slider: */
+    slider = document.createElement("DIV");
+    slider.setAttribute("class", "img-comp-slider");
+    /* Insert slider */
+    img.parentElement.insertBefore(slider, img);
+    /* Position the slider in the middle: */
+    slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
+    slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
+    /* Execute a function when the mouse button is pressed: */
+    slider.addEventListener("mousedown", slideReady);
+    /* And another function when the mouse button is released: */
+    window.addEventListener("mouseup", slideFinish);
+    /* Or touched (for touch screens: */
+    slider.addEventListener("touchstart", slideReady);
+     /* And released (for touch screens: */
+    window.addEventListener("touchend", slideFinish);
+    function slideReady(e) {
+      /* Prevent any other actions that may occur when moving over the image: */
+      e.preventDefault();
+      /* The slider is now clicked and ready to move: */
+      clicked = 1;
+      /* Execute a function when the slider is moved: */
+      window.addEventListener("mousemove", slideMove);
+      window.addEventListener("touchmove", slideMove);
+    }
+    function slideFinish() {
+      /* The slider is no longer clicked: */
+      clicked = 0;
+    }
+    function slideMove(e) {
+      var pos;
+      /* If the slider is no longer clicked, exit this function: */
+      if (clicked == 0) return false;
+      /* Get the cursor's x position: */
+      pos = getCursorPos(e)
+      /* Prevent the slider from being positioned outside the image: */
+      if (pos < 0) pos = 0;
+      if (pos > w) pos = w;
+      /* Execute a function that will resize the overlay image according to the cursor: */
+      slide(pos);
+    }
+    function getCursorPos(e) {
+      var a, x = 0;
+      e = (e.changedTouches) ? e.changedTouches[0] : e;
+      /* Get the x positions of the image: */
+      a = img.getBoundingClientRect();
+      /* Calculate the cursor's x coordinate, relative to the image: */
+      x = e.pageX - a.left;
+      /* Consider any page scrolling: */
+      x = x - window.pageXOffset;
+      return x;
+    }
+    function slide(x) {
+      /* Resize the image: */
+      img.style.width = x + "px";
+      /* Position the slider: */
+      slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
+    }
+  }
+}
+	
+	</script>
+	<h1 class= "animate__animated animate__bounce"> Top Picks!</h1>
+<div class="img-comp-container">
+  <div class="img-comp-img">
+    <img src="avril lavigne.jpeg" width="600" height="500" alt=""/>
+  </div>
+  <div class="img-comp-img img-comp-overlay">
+    <img src="PTV.jpeg" width="600" height="500" alt="">
+  </div>
+</div>
+	<h2> Top Picks are Avril Lavigne and Pierce the Veil,<br> move the slider to see the full album cover <br> down below are your honorable mentions,<br> which include more of the same genere<br><br> <a class = "animate__animated animate__fadeInRightBig" href="index-page.html">play again</a> </h2>
+<p p style="color:white;"> The top picks for you consists of the emo, punk, rock and grunge genre.<br> A lot of these genres were created in the late 1900, aka the 1980s and onward.<br> Most of the abums located in the honrable picks were created in the 90s and early 2000s.<br> Known for its loud and heavy-hitting sounds these songs fall under the alternative umbrella.</p>
+<div class="row">
+  <div class="column">
+    <img src="5SOS.jpeg" alt="Snow" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="deftones.jpeg" alt="" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="Nirvana - Nevermind (1991).jpeg" alt="" style="width:100%">
+  </div>
+	<div class="column">
+    <img src="AAR.jpeg" alt="Mountains" style="width:100%">
+  </div>
+</div>  
+	<script>
+	initComparisons();
+	</script>
+<body>
+
+</body>
+</html>
