@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<link href="../stylesheet.css" rel="stylesheet" type="text/css">
+</head>
+
+<style>
+	h1{
+		font-family: aAnotherTag;
+			font-size: 100px;
+	}
+	body{
+		background-color: black;
+	}
+	h3{
+			font-family: aAnotherTag;
+			color: red;	
+			text-align: center;
+	}
+.button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: red;
+  background-color: hotpink;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+.button:hover {background-color: lightpink;}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+	
+	.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+	</style>
+	<script>
+		function nameFunction() {
+			let userName = document.querySelector("#userName");
+			let message = document.querySelector("#message");
+			
+			message.innerHTML = "You Picked: " + userName.value + "  click the button to move forward"; 
+		}
+	function wordFunction() {
+  var x = document.getElementById("myDIV");
+  if (window.getComputedStyle(x).display === "none") {
+    x.style.display = "block";
+  }
+}
+</script>
+	<h1 class= "animate__animated animate__bounce">
+		Song Curator!
+	</h1>
+	<h3 class= "animate__animated animate__bounce">Hello user please enter your name down below</h3>
+	<input id="userName">
+		<button onClick="nameFunction()" > SUBMIT</button>
+	<br> <br> <br>
+<h2 class= "animate__animated animate__fadeInLeft" id="message">  </h2>
+	
+	<a href="outfit-time.html"> <button class="button">Click Me</button></a>
+<div class="row">
+  <div class="column">
+    <img src="1.jpeg" alt="Snow" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="AOT.jpeg" alt="" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="BNHA Season 7 in spring 2024 confirmed!!!!!!!!!!!!.jpeg" alt="" style="width:100%">
+  </div>
+	<div class="column">
+    <img src="death note.jpeg" alt="" style="width:100%">
+  </div>
+	<div class="column">
+    <img src="soul eater.jpeg" alt="" style="width:100%">
+  </div>
+</div>  
+<body>
+</body>
+</html>
